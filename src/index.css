@@ -1,0 +1,67 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --brandColor: #3c94c7;
+  --brancSecondaryColor: #d1eaf9;
+
+  /* color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
+}
+
+body {
+  background-color: #dfdfdf78;
+}
+
+/* a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+/* .pdfBox{
+  min-height: 800px;
+}
+@media (max-width: 992px) {
+  .pdfBox{
+    min-height: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .pdfBox{
+    min-height: 400px
+  }
+} */
+
+.input-error {
+  border: 1px solid #cf0b0b;
+}
+
+.formIcon {
+  color: var(--brandColor);
+  background-color: var(--brancSecondaryColor);
+  padding: 5px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-control::placeholder, select::placeholder, input::placeholder {
+  color: grey;
+  opacity: 1;
+}

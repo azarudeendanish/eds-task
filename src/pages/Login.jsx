@@ -53,6 +53,8 @@ const Login = () => {
                         <div className="d-flex justify-content-center">
                             <img src='./EdLogo.jpeg' alt='images' />
                         </div>
+                        <div className="text-center">username: azar@gmail.com</div>
+                        <div className="text-center">password: eds123</div>
                         <h3 className="text-center my-4">Login</h3>
                         <form onSubmit={formik.handleSubmit}>
                             <Form.Group className="" controlId="formBasicEmail">

@@ -1,8 +1,27 @@
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import { Container, Row, Col, Card, Button, Form, } from "react-bootstrap";
+import { pdfjs, Document, Page } from 'react-pdf';
+import { useState } from "react";
+import resume from "../../public/Azar_resume.pdf";
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 const Invoice = () => {
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [file, setFile] = useState(resume);
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.min.mjs',
+        import.meta.url,
+    ).toString();
+    const options = {
+        cMapUrl: '/cmaps/',
+        standardFontDataUrl: '/standard_fonts/',
+    };
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -39,7 +58,18 @@ const Invoice = () => {
                 <Row>
                     <Col md={6} className="mt-3">
                         <div className="vh-100 bg-white border-3 d-flex justify-content-center align-items-center" style={{ borderStyle: 'dashed', borderColor: '#ccc' }}>
-                            <Card className="p-4 text-center w-100 border-0">
+                            <div>
+                                <Document
+                                    // file="somefile.pdf"
+                                    file={file}
+                                    onLoadSuccess={onDocumentLoadSuccess}
+                                    option={options}
+                                >
+                                    <Page pageNumber={pageNumber} />
+                                </Document>
+                                <p>Page {pageNumber} of {numPages}</p>
+                            </div>
+                            {/* <Card className="p-4 text-center w-100 border-0">
                                 <Card.Body>
                                     <Card.Title>Upload Your Invoice</Card.Title>
                                     <Card.Text>To auto-populate fields and save time</Card.Text>
@@ -49,7 +79,7 @@ const Invoice = () => {
                                     <Button variant="btn btn-outline-secondary">Upload File <i className="fas fa-upload ms-1"></i></Button>
                                     <Card.Text className="mt-2"><span className="text-primary">click to upload</span> or Drag and Drop</Card.Text>
                                 </Card.Body>
-                            </Card>
+                            </Card> */}
                         </div>
                     </Col>
                     <Col md={6} className="mt-3">

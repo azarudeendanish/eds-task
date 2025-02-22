@@ -61,12 +61,28 @@ body {
 }
 
 
-.form-control::placeholder, select::placeholder, input::placeholder {
+.form-control::placeholder,
+select::placeholder,
+input::placeholder {
   color: grey;
   opacity: 1;
 }
 
 .scrollable-content {
-  overflow-y: auto;  /* Enable vertical scrolling */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  overflow-x: auto;
+  /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+}
+
+.fileUploadButton {
+  position: absolute;
+  width: 100%;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  height: 36px;
+  cursor: pointer;
 }

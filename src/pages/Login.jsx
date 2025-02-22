@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
+import EDLogo from '../assets/EdLogo.jpeg'
 const CREDENTIALS = { email: 'azar@gmail.com', password: 'eds123' }
 const Login = () => {
     const [session, setSession] = useState('')
@@ -20,17 +21,14 @@ const Login = () => {
         }),
         onSubmit: (values) => {
             setTimeout(() => {
-                console.log(values.email, CREDENTIALS.email, values.password, CREDENTIALS.password);
                 if (values.email == CREDENTIALS.email) {
                     if (values.password == CREDENTIALS.password) {
                         localStorage.setItem('email', values.email)
                         setSession(values.email)
                     } else {
-                        console.log('Please use password as: eds123');
                         toast.warn('Please use password as: eds123');
                     }
                 } else {
-                    console.log('Please use azar@gmail.com');
                     toast.warn('Please use azar@gmail.com');
                 }
             }, 400);
@@ -51,7 +49,7 @@ const Login = () => {
                 <Card style={{ width: "25rem" }} className="p-4 shadow-lg">
                     <CardBody>
                         <div className="d-flex justify-content-center">
-                            <img src='./EdLogo.jpeg' alt='images' />
+                            <img src={EDLogo} alt='logo' />
                         </div>
                         <div className="text-center">username: azar@gmail.com</div>
                         <div className="text-center">password: eds123</div>

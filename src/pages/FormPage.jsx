@@ -6,6 +6,8 @@ import Invoice from "../components/Invoice";
 
 function FormPage() {
   const [session, setSession] = useState(localStorage.getItem('email'))
+  console.log(session);
+  
   const navigate = useNavigate()
   useEffect(() => {
     

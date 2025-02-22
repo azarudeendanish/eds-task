@@ -57,7 +57,7 @@ const Invoice = () => {
             <Container fluid>
                 <Row>
                     <Col md={6} className="mt-3">
-                        <div className="vh-100 bg-white border-3 d-flex justify-content-center align-items-center" style={{ borderStyle: 'dashed', borderColor: '#ccc' }}>
+                        <div className="vh-100 bg-white border-3 d-flex justify-content-center align-items-center scrollable-content" style={{ borderStyle: 'dashed', borderColor: '#ccc' }}>
                             <div>
                                 <Document
                                     // file="somefile.pdf"

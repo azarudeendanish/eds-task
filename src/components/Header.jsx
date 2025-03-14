@@ -15,7 +15,7 @@ function Header() {
     navigate('/')
   }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary sticky-top">
       <Container fluid>
         <Link className='navbar-brand' to='/'><i className="fas fa-arrow-left me-4"></i>Create New Invoice</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />

@@ -49,7 +49,7 @@ const Login = () => {
                 <Card style={{ width: "25rem" }} className="p-4 shadow-lg">
                     <CardBody>
                         <div className="d-flex justify-content-center">
-                            <img src={EDLogo} alt='logo' />
+                            <img src={EDLogo} alt='logo' style={{display: 'none'}} />
                         </div>
                         <div className="text-center">username: azar@gmail.com</div>
                         <div className="text-center">password: eds123</div>
